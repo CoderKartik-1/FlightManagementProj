@@ -1,0 +1,85 @@
+@model FlightProjClient.Models.Kgbooking
+
+@{
+    ViewData["Title"] = "Booking Successful!";
+}
+
+<h1>Congratulations! your booking has been made..</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uid)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.UidNavigation.Uname)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Fid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FidNavigation.Fsource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FidNavigation.Fdest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate);
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumPax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Uid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.UidNavigation.Uname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Fid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.FidNavigation.Fsource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.FidNavigation.Fdest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.NumPax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.TotalCost)
+            </td>
+            <td>
+                @* @Html.ActionLink("More Details", "BookingDetails", new { id=Model.Fid }) *@
+                @Html.ActionLink("Cancel Booking", "DeleteBooking", new { id=Model.BookingId })
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="UserHomePage">Go To Home Page</a>
+</p>

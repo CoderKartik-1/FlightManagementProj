@@ -1,0 +1,61 @@
+@model IEnumerable<FlightProjClient.Models.Kgflight>
+
+@{
+    ViewData["Title"] = "Flights";
+}
+
+<h1>Available Flights</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fsource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fdest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fsource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fdest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frate)
+            </td>
+            <td>
+                @Html.ActionLink("Confirm Booking Of Ticket", "BookTicket", new { id=item.Fid }) |
+                @* @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-action="SearchFlights">Go Back</a>

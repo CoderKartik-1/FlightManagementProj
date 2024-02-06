@@ -1,0 +1,80 @@
+@model FlightProjClient.Models.Kgbooking
+
+@{
+    ViewData["Title"] = "AdminDeleteBooking";
+    Layout= "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AdminDeleteBooking</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.BookingId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.BookingId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.BookingDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.BookingDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.NumPax)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.NumPax)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.TotalCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.TotalCost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Uid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Uid)
+        </dd>
+        @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.UidNavigation.Uname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.UidNavigation.Uname)
+        </dd> *@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.Fid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.Fid)
+        </dd>
+        @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.FidNavigation.Fname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.FidNavigation.Fname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.FidNavigation.Fsource)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.FidNavigation.Fsource)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => Model.FidNavigation.Fdest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => Model.FidNavigation.Fdest)
+        </dd> *@
+    </dl>
+    
+    <form asp-action="AdminDeleteBooking">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="ShowBookings">Back to List</a>
+    </form>
+</div>

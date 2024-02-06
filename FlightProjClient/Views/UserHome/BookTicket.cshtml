@@ -1,0 +1,59 @@
+@model FlightProjClient.Models.Kgbooking
+
+@{
+    ViewData["Title"] = "BookTicket";
+}
+
+<h1>Book Ticket</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BookTicket">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="BookingId" class="control-label"></label>
+                <input asp-for="BookingId" class="form-control" />
+                <span asp-validation-for="BookingId" class="text-danger"></span>
+            </div> *@
+            @* <div class="form-group">
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" type="datetime" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="NumPax" class="control-label"></label>
+                <input asp-for="NumPax" class="form-control" />
+                <span asp-validation-for="NumPax" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="TotalCost" class="control-label"></label>
+                <input asp-for="TotalCost" class="form-control" />
+                <span asp-validation-for="TotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uid" class="control-label"></label>
+                <input asp-for="Uid" class="form-control" />
+                <span asp-validation-for="Uid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fid" class="control-label"></label>
+                <input asp-for="Fid" class="form-control" />
+                <span asp-validation-for="Fid" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Book" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="SearchFlights">Go Back</a>
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

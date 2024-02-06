@@ -1,0 +1,39 @@
+@model FlightProjClient.Models.Kgflight
+
+@{
+    ViewData["Title"] = "Search For Flights";
+}
+
+<h1>Search For Flights</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchFlights">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Fid" class="control-label"></label>
+                <input asp-for="Fid" class="form-control" />
+                <span asp-validation-for="Fid" class="text-danger"></span>
+            </div> *@
+
+            <div class="form-group">
+                <label asp-for="Fsource" class="control-label"></label>
+                @* <input asp-for="Fsource" class="form-control" /> *@
+                <select asp-for="Fsource" class="form-control" asp-items="@ViewBag.SourceCities"></select>
+                <span asp-validation-for="Fsource" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fdest" class="control-label"></label>
+                @* <input asp-for="Fdest" class="form-control" /> *@
+                <select asp-for="Fdest" class="form-control" asp-items="@ViewBag.DestCities"></select>
+                <span asp-validation-for="Fdest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search Flights" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="UserHomePage">Back to Home page</a>

@@ -1,0 +1,77 @@
+@model IEnumerable<FlightProjClient.Models.Kgbooking>
+
+@{
+    ViewData["Title"] = "ShowMyBookings";
+}
+
+<h1>Show My Bookings</h1>
+
+<p>
+    <a asp-action="SearchFlights">Create New Booking</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumPax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FidNavigation.Fsource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FidNavigation.Fdest)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumPax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FidNavigation.Fsource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FidNavigation.Fdest)
+            </td>
+            <td>
+                @Html.ActionLink("Cancel Booking", "DeleteBooking", new { id=item.BookingId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-action="UserHomePage">Back to Home page</a>

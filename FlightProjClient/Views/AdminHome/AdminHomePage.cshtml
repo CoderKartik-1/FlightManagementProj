@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "AdminHome";
+    Layout= "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Admin Dashboard</h1>
+<br>
+@* <p>
+    <a asp-action="AddFlight">Add Flight Details</a>
+</p>
+<br> *@
+<p>
+    <a class="btn btn-primary" asp-action="RetrieveFlights">View All Flights</a>
+</p>
+<br>
+<p>
+    <a class="btn btn-primary" asp-action="RetrieveBookings" asp-controller="AdminHome">Show All Bookings</a>
+</p>
+<br> 
+<p>
+    <a class="btn btn-primary" asp-action="GetAllUsers" asp-controller="AdminHome">Show All Customers</a>
+</p>

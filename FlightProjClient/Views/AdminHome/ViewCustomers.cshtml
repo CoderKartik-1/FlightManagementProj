@@ -1,0 +1,48 @@
+@model IEnumerable<FlightProjClient.Models.Kguser>
+
+@{
+    ViewData["Title"] = "ViewCustomers";
+}
+
+<h1>View Customers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Uid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ulocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ulocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit Details", "EditUser", new { id=item.Uid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,61 @@
+@model FlightProjClient.Models.Kgflight
+
+@{
+    ViewData["Title"] = "EditFlight";
+}
+
+<h1>Edit Flight</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditFlight">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Fid" class="control-label"></label>
+                <input asp-for="Fid" class="form-control" />
+                <span asp-validation-for="Fid" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Fname" class="control-label"></label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fsource" class="control-label"></label>
+                <input asp-for="Fsource" class="form-control" />
+                <span asp-validation-for="Fsource" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fdest" class="control-label"></label>
+                <input asp-for="Fdest" class="form-control" />
+                <span asp-validation-for="Fdest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Frate" class="control-label"></label>
+                <input asp-for="Frate" class="form-control" />
+                <span asp-validation-for="Frate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureTime" class="control-label"></label>
+                <input asp-for="DepartureTime" class="form-control" />
+                <span asp-validation-for="DepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrivalTime" class="control-label"></label>
+                <input asp-for="ArrivalTime" class="form-control" />
+                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
